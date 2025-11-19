@@ -13,9 +13,8 @@ const getSecondLevelBreadcrumb = (title: string) => [
   { title },
 ];
 
-const exactRoutesMap: Partial<Record<RouteValue, BreadcrumbProps["items"]>> = {
-  [routes.CREATE_PAGE]: getSecondLevelBreadcrumb("Организовать конкурс"),
-};
+const exactRoutesMap: Partial<Record<RouteValue, BreadcrumbProps["items"]>> =
+  {};
 
 export const getBreadcrumbItems = ({
   pathname,

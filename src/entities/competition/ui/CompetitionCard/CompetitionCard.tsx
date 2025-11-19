@@ -4,8 +4,6 @@ import Link from "next/link";
 import { FC } from "react";
 
 import { Tag } from "@/shared/components";
-import { IGetCreateCompetition } from "@/entities/competition/api";
-import { formatUtcToShortDate } from "@/shared/lib";
 
 import {
   SCardImage,
@@ -21,13 +19,10 @@ import {
   STagsSection,
   STitle,
 } from "./competitionCard.styles";
+import { IGetCreateCompetition } from "../../api/createCompetition";
 
 export const CompetitionCard: FC<IGetCreateCompetition> = ({
   name,
-  competitionFormat,
-  tagInfos,
-  prize,
-  competitionDateRange,
   id,
   mainImageUrl,
 }) => {
@@ -37,29 +32,18 @@ export const CompetitionCard: FC<IGetCreateCompetition> = ({
     <Link href={cardHref} prefetch={false}>
       <SCompetitionCard>
         <SCardImage $mainImageUrl={mainImageUrl}>
-          <STagsSection>
-            {tagInfos.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </STagsSection>
           <Tag>Кол-во участников: ...</Tag>
         </SCardImage>
         <SMainContent>
           <SMainInfo>
             <STitle>{name}</STitle>
             <SSubTitle>
-              <SSubtitleText>{competitionFormat}</SSubtitleText>
               <SSubtitleText>Регистрация</SSubtitleText>
             </SSubTitle>
           </SMainInfo>
           <SGeneralInfo>
             <SGeneral>
-              <SGeneralText>
-                Даты проведения:{" "}
-                {formatUtcToShortDate(competitionDateRange[0] || 0)} -{" "}
-                {formatUtcToShortDate(competitionDateRange[1] || 0)}
-              </SGeneralText>
-              <SGeneralText>{prize.description}</SGeneralText>
+              <SGeneralText>Даты проведения: </SGeneralText>
             </SGeneral>
             <SGeneralText>Организатор: ...</SGeneralText>
           </SGeneralInfo>
