@@ -2,7 +2,8 @@
   "metadata": {
     "title": {
       "homePage": "Team8 - Домашняя страница",
-      "docsPage": "Team8 - Проверка документов"
+      "docsPage": "Team8 - Проверка документов",
+      "reviewPage": "Team8 - Анализ документов"
     },
     "description": "GorkyCode - команда 8"
   },

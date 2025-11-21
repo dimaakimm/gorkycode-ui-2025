@@ -8,7 +8,7 @@ export async function generateMetadata() {
   const t = await getTranslations();
 
   return {
-    title: t("metadata.title.docsPage"),
+    title: t("metadata.title.reviewPage"),
     description: t("metadata.description"),
   };
 }

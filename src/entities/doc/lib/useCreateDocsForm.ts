@@ -18,7 +18,7 @@ export const useCreateDocsForm = (): IDocFormik => {
   };
 
   const { values, setValues, errors } = useFormik<
-    IDocForm & { activeUrl: string | null }
+    IDocForm & { activeUrl: string | null; isReady: boolean; isEmpty: boolean }
   >({
     initialValues: initialDocTypes,
     onSubmit,
@@ -45,6 +45,19 @@ export const useCreateDocsForm = (): IDocFormik => {
   };
 
   const errorMessages = Object.values(errors).filter(Boolean) as string[];
+  const isReady =
+    !!values.IMCP &&
+    !!values.BidContentRequirements &&
+    !!values.DescriptionOfProcurementItem &&
+    !!values.DraftGovernmentContract &&
+    !!values.Notice;
+
+  const isEmpty =
+    !values.IMCP &&
+    !values.BidContentRequirements &&
+    !values.DescriptionOfProcurementItem &&
+    !values.DraftGovernmentContract &&
+    !values.Notice;
 
   return {
     IMCP: {
@@ -69,5 +82,7 @@ export const useCreateDocsForm = (): IDocFormik => {
     },
     errors: errorMessages,
     activeUrl: values.activeUrl,
+    isReady,
+    isEmpty,
   };
 };

@@ -30,4 +30,6 @@ export interface IDocFormik {
   };
   errors: string[];
   activeUrl: string | null;
+  isReady: boolean;
+  isEmpty: boolean;
 }

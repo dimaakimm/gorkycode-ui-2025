@@ -12,3 +12,5 @@ export * from "./PDFFile";
 export * from "./EmptyUploadFile";
 export * from "./Folder";
 export * from "./Preview";
+export * from "./Table";
+export * from "./Bin";

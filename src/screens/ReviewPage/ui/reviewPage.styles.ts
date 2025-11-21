@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const SDocsList = styled.div`
+export const SReviewPage = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  overflow: auto;
+  gap: 40px;
+  height: 100%;
 `;

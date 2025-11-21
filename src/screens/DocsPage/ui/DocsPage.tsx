@@ -5,27 +5,28 @@ import { useRouter } from "next/navigation";
 import { Tooltip } from "antd";
 
 import { Button, useNotify } from "@/shared/components";
-import { ArrowLeft } from "@/shared/assets";
-import { FileView } from "@/features/FileView";
-import { DocsList } from "@/widgets/DocsList";
-import { FilePreview } from "@/features/FilePreview";
-import { useCreateDocsForm } from "@/entities/doc";
+import { ArrowLeft, EmptyUploadFile } from "@/shared/assets";
+import { DocUpload, useCreateDocsForm } from "@/entities/doc";
+import { ZipUpload } from "@/features/ZipUpload";
 
 import {
+  SButtonSection,
   SContent,
+  SDocsList,
   SDocsPage,
+  SDocsSection,
   SMainContent,
+  SMidSection,
   SPageTitle,
-  SPreviewSection,
-  SSection,
   SSubtitle,
-  SUploadSection,
+  STitleSection,
+  SZipSection,
 } from "./docsPage.styles";
 
 const DocsPage = () => {
   const router = useRouter();
   const notify = useNotify();
-  const { activeUrl, errors } = useCreateDocsForm();
+  const { activeUrl, isReady, isEmpty, errors } = useCreateDocsForm();
 
   const handleBackButtonClick = () => {
     router.push("/");
@@ -42,38 +43,51 @@ const DocsPage = () => {
         >
           Вернуться
         </Button>
+        <Button
+          onClick={handleBackButtonClick}
+          color="blue"
+          icon={<ArrowLeft />}
+        >
+          Завершить проверку
+        </Button>
       </div>
 
       <SContent>
-        <SPageTitle>Загрузка файлов</SPageTitle>
+        <STitleSection>
+          <SPageTitle>Загрузка файлов</SPageTitle>
+          <SSubtitle>Подгрузите ваши файлы в систему на обработку </SSubtitle>
+        </STitleSection>
         <SMainContent>
-          <SSection>
-            <SSubtitle>Подгрузите ваши файлы в систему на обработку </SSubtitle>
-            <SUploadSection>
-              <DocsList />
-            </SUploadSection>
-          </SSection>
+          <SDocsSection>
+            <SZipSection>
+              <ZipUpload />
+            </SZipSection>
 
-          <SSection>
-            <SSubtitle>Предпросмотр файла</SSubtitle>
-            <SPreviewSection>
-              {activeUrl && <FileView url={activeUrl} />}
-              {!activeUrl && <FilePreview />}
-              <Tooltip
-                title={
-                  <ul>
-                    {errors.map((err, index) => (
-                      <li style={{ marginBottom: 6 }} key={index}>
-                        {err}
-                      </li>
-                    ))}
-                  </ul>
-                }
-              >
-                <Button color={"blue"} disabled={isSendDisabled}>
-                  Отправить файлы на обработку
-                </Button>
-              </Tooltip>
+            <SMidSection>или</SMidSection>
+
+            <SDocsList>
+              <DocUpload
+                title={"Обоснование НМЦК"}
+                FileIcon={<EmptyUploadFile />}
+              />
+              <DocUpload
+                title={"Проект государственного контракта"}
+                FileIcon={<EmptyUploadFile />}
+              />
+              <DocUpload
+                title={"Требования к содержанию заявки"}
+                FileIcon={<EmptyUploadFile />}
+              />
+              <DocUpload title={"Извещение"} FileIcon={<EmptyUploadFile />} />
+              <DocUpload
+                title={"Описание объекта закупки"}
+                FileIcon={<EmptyUploadFile />}
+              />
+            </SDocsList>
+          </SDocsSection>
+
+          <SButtonSection>
+            {!isEmpty && (
               <Button
                 color="white"
                 onClick={() =>
@@ -86,8 +100,24 @@ const DocsPage = () => {
               >
                 Очистить список
               </Button>
-            </SPreviewSection>
-          </SSection>
+            )}
+
+            <Tooltip
+              title={
+                <ul>
+                  {errors.map((err, index) => (
+                    <li style={{ marginBottom: 6 }} key={index}>
+                      {err}
+                    </li>
+                  ))}
+                </ul>
+              }
+            >
+              <Button color={"blue"} disabled={!isReady}>
+                Отправить файлы на обработку
+              </Button>
+            </Tooltip>
+          </SButtonSection>
         </SMainContent>
       </SContent>
     </SDocsPage>

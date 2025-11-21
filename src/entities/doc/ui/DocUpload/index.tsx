@@ -17,10 +17,12 @@ export const DocUpload: FC<DocUploadProps> = ({
   FileIcon,
   description = "Выберите файл для загрузки",
   title,
+  maxCount = 1,
+  accept = ".zip,.rar,.7z",
   ...props
 }) => {
   return (
-    <SDocUpload {...props}>
+    <SDocUpload maxCount={maxCount} showUploadList={false} {...props}>
       <SContent>
         <SLeftIcon>{FileIcon}</SLeftIcon>
         <STextSection>
