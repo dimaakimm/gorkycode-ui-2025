@@ -57,8 +57,8 @@ const DocsPage = () => {
           <SSection>
             <SSubtitle>Предпросмотр файла</SSubtitle>
             <SPreviewSection>
-              {!activeUrl && <FileView url={"wddwdw"} />}
-              {activeUrl && <FilePreview />}
+              {activeUrl && <FileView url={activeUrl} />}
+              {!activeUrl && <FilePreview />}
               <Tooltip
                 title={
                   <ul>
