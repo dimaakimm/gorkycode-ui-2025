@@ -23,12 +23,12 @@ export const SSteps = styled(Steps)`
   }
 
   .ant-steps-item-active .ant-steps-item-icon {
-    border: 1px solid ${({ theme }) => theme.colors.violet};
+    border: 1px solid ${({ theme }) => theme.colors.gray.d7};
     box-shadow: 0px 0px 0px 2px rgba(62, 42, 153, 0.22);
   }
 
   .ant-steps-item-active .ant-steps-item-icon > .ant-steps-icon {
-    color: ${({ theme }) => theme.colors.violet};
+    color: ${({ theme }) => theme.colors.gray.d7};
     font-weight: 500;
   }
 
@@ -38,7 +38,7 @@ export const SSteps = styled(Steps)`
 
   .ant-steps-item-active .ant-steps-item-icon {
     background: ${({ theme }) => theme.colors.white};
-    border: 1px solid ${({ theme }) => theme.colors.violet};
+    border: 1px solid ${({ theme }) => theme.colors.gray.d7};
   }
 
   &.ant-steps.ant-steps-with-progress
@@ -46,7 +46,7 @@ export const SSteps = styled(Steps)`
     .ant-steps-item-container
     .ant-steps-item-icon
     .ant-steps-icon {
-    color: ${({ theme }) => theme.colors.violet};
+    color: ${({ theme }) => theme.colors.gray.d7};
   }
 
   .shake-animation {
@@ -56,7 +56,7 @@ export const SSteps = styled(Steps)`
   .ant-steps-item-finish
     > .ant-steps-item-container
     > .ant-steps-item-tail::after {
-    background-color: ${({ theme }) => theme.colors.violet};
+    background-color: ${({ theme }) => theme.colors.gray.d7};
   }
 
   .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
@@ -74,7 +74,7 @@ export const SSteps = styled(Steps)`
   }
 
   .ant-steps-item-finish .ant-steps-item-icon {
-    background: ${({ theme }) => theme.colors.violet};
+    background: ${({ theme }) => theme.colors.gray.d7};
   }
 
   .ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content {
@@ -85,11 +85,11 @@ export const SSteps = styled(Steps)`
 
   &.ant-steps .ant-steps-item-wait .ant-steps-item-icon {
     background-color: transparent;
-    border: 1px solid ${({ theme }) => theme.colors.gray.mid};
+    border: 1px solid ${({ theme }) => theme.colors.gray.d2};
   }
 
   .ant-progress-inner:not(.ant-progress-circle-gradient)
     .ant-progress-circle-path {
-    stroke: ${({ theme }) => theme.colors.violet} !important;
+    stroke: ${({ theme }) => theme.colors.gray.d7} !important;
   }
 `;

@@ -25,6 +25,7 @@ const textButtonColorMap: Record<IconType, ButtonColorType> = {
   warning: "violet",
 };
 
+
 export const ToastBarProvider: FC<PropsWithChildren> = ({ children }) => {
   const [api, holder] = notification.useNotification({ maxCount: 5 });
   const theme = useTheme();
@@ -41,7 +42,7 @@ export const ToastBarProvider: FC<PropsWithChildren> = ({ children }) => {
         const { color, bgColor, Icon } = getToastBarStyles(
           type,
           theme,
-          !!description,
+          !!description
         );
         const showDescription = description || button;
 
@@ -84,7 +85,7 @@ export const ToastBarProvider: FC<PropsWithChildren> = ({ children }) => {
         api[type](config);
       },
     }),
-    [api, theme],
+    [api, theme]
   );
 
   return (

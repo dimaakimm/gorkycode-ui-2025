@@ -14,5 +14,5 @@ export const SSwitchContainer = styled.div`
 `;
 
 export const SText = styled.div`
-  ${({ theme }) => theme.font.body}
+  ${({ theme }) => theme.font.default}
 `;

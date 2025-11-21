@@ -18,7 +18,7 @@ export const SDateRangePicker = styled(DatePicker.RangePicker).attrs({
 
   .ant-picker-clear {
     background: transparent;
-    color: ${(props) => props.theme.colors.violet}; /* ваш цвет */
+    color: ${(props) => props.theme.colors.gray.d7}; /* ваш цвет */
 
     svg {
       width: 14px;

@@ -4,61 +4,72 @@ import { IFontTheme, IColorsTheme } from "@/types";
 
 const lightThemeColors: IColorsTheme = {
   gray: {
-    primary: "rgba(230, 230, 230, 1)",
-    dark: "rgba(19, 19, 19, 1)",
-    mid: "rgba(152, 152, 152, 1)",
-    fill: "rgba(245, 245, 245, 1)",
+    f4: "#f4f4f4",
+    d2: "#D2D2D2",
+    d9: "#D9D9D9",
+    g9: "#999999",
+    g80: "#808080",
+  },
+  green: {
+    light: "#3AC0B4",
+    dark: "#20615D",
   },
   white: "rgba(255, 255, 255, 1)",
-  violet: "rgba(30, 4, 146, 1)",
-  lightViolet: "#D1CCEF",
+  black: "#000000",
+  blue: "#3A5D71",
 };
 
 const AppFonts = {
-  Sansation: "var(--font-sansation)",
+  SFPro: "var(--font-sfpro)",
 };
 
 export const font: IFontTheme = {
-  title1: css`
-    font-family: ${AppFonts.Sansation};
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 1;
+  title: css`
+    font-family: ${AppFonts.SFPro};
+    font-family: SF Pro;
+    font-weight: 510;
+    font-size: 30px;
+    line-height: 100%;
     letter-spacing: 0;
   `,
-  title2: css`
-    font-family: ${AppFonts.Sansation};
+  h2: css`
+    font-family: ${AppFonts.SFPro};
+    font-family: SF Pro;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 1;
+    font-size: 18px;
+    line-height: 100%;
     letter-spacing: 0;
   `,
-  subtitle: css`
-    font-family: ${AppFonts.Sansation};
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: 0;
-  `,
-  body: css`
-    font-family: ${AppFonts.Sansation};
+  p1: css`
+    font-family: ${AppFonts.SFPro};
+    font-family: SF Pro;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1;
+    line-height: 100%;
     letter-spacing: 0;
   `,
-  caption: css`
-    font-family: ${AppFonts.Sansation};
-    font-weight: 400;
+  p2: css`
+    font-family: ${AppFonts.SFPro};
+    font-family: SF Pro;
+    font-weight: 510;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+  `,
+  h3: css`
+    font-family: ${AppFonts.SFPro};
+    font-family: SF Pro;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+  `,
+  p3: css`
+    font-family: ${AppFonts.SFPro};
+    font-family: SF Pro;
+    font-weight: 510;
     font-size: 12px;
-    line-height: 1;
-    letter-spacing: 0;
-  `,
-  callout: css`
-    font-family: ${AppFonts.Sansation};
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 1;
+    line-height: 100%;
     letter-spacing: 0;
   `,
 };

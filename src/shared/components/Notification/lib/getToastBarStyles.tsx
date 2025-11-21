@@ -44,13 +44,13 @@ export const getToastBarStyles = (
       };
     case "info":
       return {
-        color: theme.colors.gray.mid,
+        color: theme.colors.gray.d2,
         Icon: (
           <SIcon $with={withDescription} $type={type}>
             <InfoCircle />
           </SIcon>
         ),
-        bgColor: theme.colors.gray.fill,
+        bgColor: theme.colors.gray.d9,
       };
     default:
       return {};

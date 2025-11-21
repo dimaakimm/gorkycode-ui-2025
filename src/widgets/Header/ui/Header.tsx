@@ -15,14 +15,14 @@ export const Header = () => {
   return (
     <SHeader>
       <SHeaderMainContent>
-        <Link href={routes.HOME_PAGE}>a</Link>
+        <Link href={routes.HOME_PAGE}>главная страница</Link>
         <SHeaderActions>
-          <Button type="text">a</Button>
-          <Button type="text">a</Button>
+          <Button type="text">ссылка 1</Button>
+          <Button type="text">ссылка 2</Button>
         </SHeaderActions>
       </SHeaderMainContent>
       <div>
-        <Button>a</Button>
+        <Button>Кнопка</Button>
       </div>
     </SHeader>
   );

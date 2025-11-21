@@ -15,17 +15,17 @@ export const SInput = styled(Input).attrs((props) => ({
 
   &.ant-input-outlined:hover,
   &.ant-input-outlined:focus-within {
-    border-color: ${({ theme }) => theme.colors.violet};
+    border-color: ${({ theme }) => theme.colors.gray.d7};
     box-shadow: none;
   }
 
   &.ant-input-affix-wrapper .ant-input-clear-icon {
     width: 14px;
     height: 14px;
-    color: ${({ theme }) => theme.colors.gray.dark};
+    color: ${({ theme }) => theme.colors.gray.g9};
 
     &:hover {
-      color: ${({ theme }) => theme.colors.violet};
+      color: ${({ theme }) => theme.colors.gray.d7};
     }
   }
 `;

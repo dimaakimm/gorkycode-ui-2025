@@ -2,6 +2,7 @@
 
 import { FC, PropsWithChildren } from "react";
 
+
 import { ToastBarProvider } from "@/shared/components";
 
 import { ThemeProvider } from "./ThemeProvider";

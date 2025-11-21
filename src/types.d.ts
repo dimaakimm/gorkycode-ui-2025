@@ -9,24 +9,29 @@ declare global {
 }
 
 export interface IFontTheme {
-  title1: RuleSet<object>;
-  title2: RuleSet<object>;
-  subtitle: RuleSet<object>;
-  body: RuleSet<object>;
-  caption: RuleSet<object>;
-  callout: RuleSet<object>;
+  title: RuleSet<object>;
+  h2: RuleSet<object>;
+  p1: RuleSet<object>;
+  p2: RuleSet<object>;
+  h3: RuleSet<object>;
+  p3: RuleSet<object>;
 }
 
 export interface IColorsTheme {
   gray: {
-    primary: string;
+    f4: string;
+    d2: string;
+    d9: string;
+    g9: string;
+    g80: string;
+  };
+  green: {
+    light: string;
     dark: string;
-    mid: string;
-    fill: string;
   };
   white: string;
-  violet: string;
-  lightViolet: string;
+  black: string;
+  blue: string;
 }
 
 export type ThemeTitleType = "light";

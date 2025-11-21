@@ -49,7 +49,11 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     <html lang={locale}>
       <body className={`${sansation.variable} font-sans`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <WithProviders>{children}</WithProviders>
+          <WithProviders>
+            <div style={{ padding: 50, height: "100%", maxHeight: "100%" }}>
+              {children}
+            </div>
+          </WithProviders>
         </NextIntlClientProvider>
       </body>
     </html>

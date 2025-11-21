@@ -6,7 +6,7 @@ export const SCompetitionCard = styled.div`
   border-radius: 12px;
   overflow: hidden;
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.gray.primary};
+  border: 1px solid ${({ theme }) => theme.colors.gray.d9};
 `;
 
 export const SCardImage = styled.div.attrs<{ $mainImageUrl: string }>({})`
@@ -27,7 +27,7 @@ export const STagsSection = styled.div`
 `;
 
 export const SParticipantsNumber = styled.div`
-  ${({ theme }) => theme.font.body}
+  ${({ theme }) => theme.font.default}
 `;
 
 export const SMainContent = styled.div`
@@ -46,7 +46,7 @@ export const SMainInfo = styled.div`
 `;
 
 export const STitle = styled.div`
-  ${({ theme }) => theme.font.title2}
+  ${({ theme }) => theme.font.title}
 `;
 
 export const SSubTitle = styled.div`
@@ -55,7 +55,7 @@ export const SSubTitle = styled.div`
 `;
 
 export const SSubtitleText = styled.div`
-  ${({ theme }) => theme.font.subtitle}
+  ${({ theme }) => theme.font.default}
 `;
 
 export const SGeneralInfo = styled.div`
@@ -71,5 +71,5 @@ export const SGeneral = styled.div`
 `;
 
 export const SGeneralText = styled.div`
-  ${({ theme }) => theme.font.body}
+  ${({ theme }) => theme.font.default}
 `;

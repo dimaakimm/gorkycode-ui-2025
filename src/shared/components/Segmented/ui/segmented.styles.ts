@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const SSegmented = styled(Segmented).attrs<SegmentedProps>({})`
   &.ant-segmented {
     background: ${({ theme }) => theme.colors.white};
-    border: 1px solid ${({ theme }) => theme.colors.gray.primary};
+    border: 1px solid ${({ theme }) => theme.colors.gray.d9};
     padding: 6px;
     border-radius: 50px;
   }
@@ -23,7 +23,7 @@ export const SSegmented = styled(Segmented).attrs<SegmentedProps>({})`
 
   &.ant-segmented .ant-segmented-item-selected {
     border-radius: 30px;
-    background: ${({ theme }) => theme.colors.violet};
+    background: ${({ theme }) => theme.colors.gray.d7};
     color: ${({ theme }) => theme.colors.white};
   }
 `;

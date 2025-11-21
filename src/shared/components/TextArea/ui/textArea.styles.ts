@@ -9,6 +9,6 @@ export const STextArea = styled(Input.TextArea)`
   }
   &.ant-input-outlined:focus,
   &.ant-input-outlined:hover {
-    border-color: ${({ theme }) => theme.colors.violet};
+    border-color: ${({ theme }) => theme.colors.gray.d7};
   }
 `;

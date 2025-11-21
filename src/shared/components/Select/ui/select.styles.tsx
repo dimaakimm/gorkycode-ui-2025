@@ -26,11 +26,11 @@ export const SSelect = styled(Select).attrs((props) => ({
   .ant-select-clear {
     width: 14px;
     height: 14px;
-    color: ${({ theme }) => theme.colors.gray.dark};
+    color: ${({ theme }) => theme.colors.gray.g9};
     inset-inline-end: 44px;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.violet};
+      color: ${({ theme }) => theme.colors.gray.d7};
     }
   }
 

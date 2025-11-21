@@ -1,12 +1,11 @@
 {
   "metadata": {
     "title": {
-      "homePage": "GorkyCode - команда 8"
+      "homePage": "Team8 - Домашняя страница",
+      "docsPage": "Team8 - Проверка документов"
     },
     "description": "GorkyCode - команда 8"
   },
-  "pages":{
-  },
-  "header": {
-  }
+  "pages": {},
+  "header": {}
 }

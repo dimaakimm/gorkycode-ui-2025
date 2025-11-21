@@ -5,8 +5,8 @@ import { Button } from "@/shared/components";
 import { IToastBarItem } from "../model/toastBar.types";
 
 export const STitle = styled.div<{ $showDescription: boolean }>`
-  color: ${({ theme }) => theme.colors.gray.mid};
-  ${({ theme }) => theme.font.title2};
+  color: ${({ theme }) => theme.colors.black};
+  ${({ theme }) => theme.font.title};
   ${({ $showDescription }) =>
     $showDescription &&
     css`
@@ -40,8 +40,8 @@ export const STitle = styled.div<{ $showDescription: boolean }>`
 `;
 
 export const SDescription = styled.div`
-  color: ${({ theme }) => theme.colors.gray.mid};
-  ${({ theme }) => theme.font.body.medium};
+  color: ${({ theme }) => theme.colors.gray.g80};
+  ${({ theme }) => theme.font.p1};
   white-space: pre-line;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ export const SDescription = styled.div`
 `;
 
 export const SCloseIcon = styled.div`
-  color: ${({ theme }) => theme.colors.gray.mid};
+  color: ${({ theme }) => theme.colors.gray.d2};
   align-self: center;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@ export const SIcon = styled.div<{
         `;
       case "info":
         return css`
-          background-color: ${theme.colors.gray.mid};
+          background-color: ${theme.colors.gray.d2};
         `;
       case "error":
         return css`
