@@ -15,3 +15,5 @@ export * from "./Preview";
 export * from "./Table";
 export * from "./Bin";
 export * from "./Exit";
+export * from "./DOCFile";
+export * from "./Delete";

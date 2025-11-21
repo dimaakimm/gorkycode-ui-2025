@@ -24,18 +24,18 @@ export const SContent = styled.div`
   }
 `;
 
-export const STextSection = styled(Upload)`
+export const STextSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
 `;
 
-export const STitle = styled(Upload)`
+export const STitle = styled.div`
   ${({ theme }) => theme.font.h3}
   color:${({ theme }) => theme.colors.black};
 `;
 
-export const SDescription = styled(Upload)`
+export const SDescription = styled.div`
   ${({ theme }) => theme.font.p3}
   color:${({ theme }) => theme.colors.gray.d9};
 `;
