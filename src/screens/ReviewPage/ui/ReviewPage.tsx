@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import { useRouter } from "next/navigation";
 
-import { SReviewPage } from "@/screens/ReviewPage/ui/reviewPage.styles";
 import { Button } from "@/shared/components";
 import { ArrowLeft, Exit } from "@/shared/assets";
+
+import { SReviewPage, SSubtitle, STitle } from "./reviewPage.styles";
 
 export const ReviewPage = () => {
   const router = useRouter();
@@ -28,6 +31,25 @@ export const ReviewPage = () => {
         <Button onClick={handleExitButtonClick} color="blue" icon={<Exit />}>
           Завершить проверку
         </Button>
+      </div>
+      <div>
+        <div>
+          <div>
+            <STitle>Обработка файлов</STitle>
+            <SSubtitle>Подождите, пока ваши файлы в обработке</SSubtitle>
+          </div>
+          <div>docs</div>
+        </div>
+
+        <div>
+          <STitle>Ошибки</STitle>
+          <div>
+            <div>block</div>
+            <div>block</div>
+            <div>block</div>
+            <div>block</div>
+          </div>
+        </div>
       </div>
     </SReviewPage>
   );
