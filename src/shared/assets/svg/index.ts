@@ -17,3 +17,5 @@ export * from "./Bin";
 export * from "./Exit";
 export * from "./DocInfo";
 export * from "./DocDownload";
+export * from "./DOCFile";
+export * from "./Delete";
