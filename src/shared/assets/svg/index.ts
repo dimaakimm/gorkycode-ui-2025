@@ -14,3 +14,4 @@ export * from "./Folder";
 export * from "./Preview";
 export * from "./Table";
 export * from "./Bin";
+export * from "./Exit";

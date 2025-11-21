@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Tooltip } from "antd";
 
 import { Button, useNotify } from "@/shared/components";
-import { ArrowLeft, EmptyUploadFile } from "@/shared/assets";
+import { ArrowLeft, EmptyUploadFile, Exit } from "@/shared/assets";
 import { DocUpload, useCreateDocsForm } from "@/entities/doc";
 import { ZipUpload } from "@/features/ZipUpload";
 
@@ -42,13 +42,6 @@ const DocsPage = () => {
           icon={<ArrowLeft />}
         >
           Вернуться
-        </Button>
-        <Button
-          onClick={handleBackButtonClick}
-          color="blue"
-          icon={<ArrowLeft />}
-        >
-          Завершить проверку
         </Button>
       </div>
 
