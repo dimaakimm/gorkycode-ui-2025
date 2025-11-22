@@ -157,15 +157,19 @@ export const ReviewPage = () => {
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
+                  // eslint-disable-next-line max-len
+                  link: "https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=494990&dst=100001#vlx3E3Ve8eSekpmq",
                 },
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
-                  link: "http:www",
+                  // eslint-disable-next-line max-len
+                  link: "https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=494990&dst=100001#vlx3E3Ve8eSekpmq",
                 },
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
+                  link: "https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=494990&dst=100001#vlx3E3Ve8eSekpmq",
                 },
               ]}
             />
@@ -177,15 +181,17 @@ export const ReviewPage = () => {
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
+                  link: "https://zakupki.gov.ru/epz/complaint/card/complaint-information.html?complaintNumber=202500151003002760",
                 },
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
-                  link: "http:www",
+                  link: "https://zakupki.gov.ru/epz/complaint/card/complaint-information.html?complaintNumber=202500151003002760",
                 },
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
+                  link: "https://zakupki.gov.ru/epz/complaint/card/complaint-information.html?complaintNumber=202500151003002760",
                 },
               ]}
             />
@@ -195,16 +201,15 @@ export const ReviewPage = () => {
               title={"Орфографические ошибки"}
               errors={[
                 {
-                  title: "ФЗ 44 ч.3",
+                  // title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
                 },
                 {
-                  title: "ФЗ 44 ч.3",
+                  // title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
-                  link: "http:www",
                 },
                 {
-                  title: "ФЗ 44 ч.3",
+                  // title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
                 },
               ]}
@@ -217,15 +222,17 @@ export const ReviewPage = () => {
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
+                  link: "https://zakupki.gov.ru/epz/complaint/card/complaint-information.html?complaintNumber=202500151003002760",
                 },
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
-                  link: "http:www",
+                  link: "https://zakupki.gov.ru/epz/complaint/card/complaint-information.html?complaintNumber=202500151003002760",
                 },
                 {
                   title: "ФЗ 44 ч.3",
                   description: "Не указан способ определения поставщика",
+                  link: "https://zakupki.gov.ru/epz/complaint/card/complaint-information.html?complaintNumber=202500151003002760",
                 },
               ]}
             />

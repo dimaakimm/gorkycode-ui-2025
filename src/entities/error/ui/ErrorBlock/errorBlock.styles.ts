@@ -24,6 +24,7 @@ export const SError = styled.div`
   padding: 6px;
   display: flex;
   gap: 6px;
+  align-items: center;
 `;
 
 export const SErrorTitleSection = styled.div`

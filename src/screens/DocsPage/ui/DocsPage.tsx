@@ -61,13 +61,13 @@ const DocsPage = () => {
   return (
     <SDocsPage>
       <div>
-        <Button
-          onClick={handleBackButtonClick}
-          color="white"
-          icon={<ArrowLeft />}
-        >
-          Вернуться
-        </Button>
+        {/*<Button*/}
+        {/*  onClick={handleBackButtonClick}*/}
+        {/*  color="white"*/}
+        {/*  icon={<ArrowLeft />}*/}
+        {/*>*/}
+        {/*  Вернуться*/}
+        {/*</Button>*/}
       </div>
 
       <SContent>
@@ -133,22 +133,22 @@ const DocsPage = () => {
               </Button>
             )}
 
-            <Tooltip
-              title={
-                <ul>
-                  {errors.map((err, index) => (
-                    <li style={{ marginBottom: 6 }} key={index}>
-                      {err}
-                    </li>
-                  ))}
-                </ul>
-              }
-            >
-              {/*<Button color={"blue"} disabled={!isReady}>*/}
-              <Button color={"blue"} onClick={goToReview}>
-                Отправить файлы на обработку
-              </Button>
-            </Tooltip>
+            {/*<Tooltip*/}
+            {/*  title={*/}
+            {/*    <ul>*/}
+            {/*      {errors.map((err, index) => (*/}
+            {/*        <li style={{ marginBottom: 6 }} key={index}>*/}
+            {/*          {err}*/}
+            {/*        </li>*/}
+            {/*      ))}*/}
+            {/*    </ul>*/}
+            {/*  }*/}
+            {/*>*/}
+            {/*<Button color={"blue"} disabled={!isReady}>*/}
+            <Button color={"blue"} onClick={goToReview}>
+              Отправить файлы на обработку
+            </Button>
+            {/*</Tooltip>*/}
           </SButtonSection>
         </SMainContent>
       </SContent>

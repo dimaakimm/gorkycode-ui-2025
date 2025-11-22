@@ -30,7 +30,7 @@ export const SSubtitle = styled.div`
 
 export const SDocsContainer = styled.div`
   display: grid;
-  grid-template-columns: 4fr 3fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 16px;
   row-gap: 10px;
 `;

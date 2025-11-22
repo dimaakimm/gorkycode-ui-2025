@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface IError {
-  title: string;
+  title?: string;
   description: string;
   link?: string;
 }
