@@ -59,6 +59,12 @@ export const SButtonsSection = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 10px !important;
+    font-weight: 410 !important;
+    gap: 10px !important;
+  }
+
+  .ant-btn-icon {
+    color: ${({ theme }) => theme.colors.gray.g9};
   }
 `;
 

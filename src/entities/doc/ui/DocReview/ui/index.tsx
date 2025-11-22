@@ -1,40 +1,38 @@
 import React, { FC } from "react";
 
-import { Button } from "@/shared/components";
+import { Button, Loader } from "@/shared/components";
 import { DocDownload, DocInfo } from "@/shared/assets";
 
+import { DocReviewProps } from "../model/docReview.types";
 import { getDocIconByTitle } from "../lib/getDocIconByTitle";
-import { SDocReview } from "./docReview.styles";
-
-export interface DocReviewProps {
-  isLoading: boolean;
-  title: string;
-  onClick: () => void;
-  description?: string;
-  format: string;
-  infoUrl?: string;
-  downloadUrl?: string;
-  isActive?: boolean;
-}
+import {
+  SDocReview,
+  STitle,
+  SDescription,
+  SMainInfo,
+  SIcon,
+} from "./docReview.styles";
 
 export const DocReview: FC<DocReviewProps> = ({
   isLoading,
   isActive,
   title,
   onClick,
-  description,
   infoUrl,
   downloadUrl,
 }) => {
   const icon = getDocIconByTitle(title);
+  const description = isLoading ? "Загрузка файла 50%" : "Обработанный файл";
+
   return (
     <SDocReview onClick={onClick} $isActive={isActive}>
-      <div>{icon}</div>
+      <SIcon $isLoading={isLoading}>{icon}</SIcon>
+      <SMainInfo>
+        <STitle>{title}</STitle>
+        <SDescription>{description}</SDescription>
+      </SMainInfo>
       <div>
-        <div>{title}</div>
-        <div>{description}</div>
-      </div>
-      <div>
+        {isLoading && <Loader />}
         {infoUrl && (
           <Button>
             <DocInfo />

@@ -18,6 +18,7 @@ const sansation = Sansation({
   variable: "--font-sansation",
 });
 
+
 export async function generateMetadata() {
   const t = await getTranslations();
 

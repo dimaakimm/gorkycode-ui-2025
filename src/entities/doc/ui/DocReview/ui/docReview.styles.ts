@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { theme } from "antd";
 
 export const SDocReview = styled.div.attrs<{ $isActive?: boolean }>({})`
   display: grid;
@@ -26,4 +27,24 @@ export const SDocReview = styled.div.attrs<{ $isActive?: boolean }>({})`
   &:hover {
     background-color: ${({ theme }) => theme.colors.gray.f4};
   }
+`;
+
+export const SMainInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+`;
+
+export const STitle = styled.div`
+  ${({ theme }) => theme.font.h3}
+`;
+
+export const SDescription = styled.div`
+  ${({ theme }) => theme.font.p3};
+  font-weight: 400;
+`;
+
+export const SIcon = styled.div.attrs<{ $isLoading: boolean }>({})`
+  color: ${({ $isLoading, theme }) =>
+    $isLoading ? theme.colors.gray.d9 : theme.colors.green};
 `;

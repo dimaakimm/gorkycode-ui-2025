@@ -121,14 +121,14 @@ export const ReviewPage = () => {
             />
             <DocReview
               onClick={() => setActiveDoc("BidContentRequirements")}
-              isLoading={false}
+              isLoading={true}
               title={"Требования к содержанию заявки.doc"}
               format={".xls"}
               isActive={activeDoc === "BidContentRequirements"}
             />
             <DocReview
               onClick={() => setActiveDoc("DraftGovernmentContract")}
-              isLoading={false}
+              isLoading={true}
               title={"Проект государственного контракта.doc"}
               format={".xls"}
               isActive={activeDoc === "DraftGovernmentContract"}

@@ -13,3 +13,4 @@ export * from "./DateRangePicker";
 export * from "./Tabs";
 export * from "./Upload";
 export * from "./Notification";
+export * from './Loader';
