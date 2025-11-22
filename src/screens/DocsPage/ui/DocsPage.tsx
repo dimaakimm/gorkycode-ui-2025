@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Tooltip } from "antd";
 
@@ -27,6 +27,14 @@ const DocsPage = () => {
   const router = useRouter();
   const notify = useNotify();
   const { activeUrl, isReady, isEmpty, errors } = useCreateDocsForm();
+  const [nmck, setNmck] = useState("Обоснование НМЦК");
+  const [contract, setContract] = useState("Проект государственного контракта");
+  const [application, setApplication] = useState(
+    "Требования к содержанию заявки",
+  );
+  const [notification, setNotification] = useState("Извещение");
+  const [purchase, setPurchase] = useState("Описание объекта закупки");
+  const [zipDownloaded, setZipDownloaded] = useState(false);
 
   const handleBackButtonClick = () => {
     router.push("/");
@@ -53,28 +61,41 @@ const DocsPage = () => {
         <SMainContent>
           <SDocsSection>
             <SZipSection>
-              <ZipUpload />
+              <ZipUpload setDownloaded={setZipDownloaded} />
             </SZipSection>
 
             <SMidSection>или</SMidSection>
 
             <SDocsList>
               <DocUpload
-                title={"Обоснование НМЦК"}
+                title={nmck}
                 FileIcon={<EmptyUploadFile />}
+                docType={"IMCP"}
+                downloaded={zipDownloaded}
               />
               <DocUpload
-                title={"Проект государственного контракта"}
+                title={contract}
                 FileIcon={<EmptyUploadFile />}
+                docType={"DraftGovernmentContract"}
+                downloaded={zipDownloaded}
               />
               <DocUpload
-                title={"Требования к содержанию заявки"}
+                title={application}
                 FileIcon={<EmptyUploadFile />}
+                docType={"BidContentRequirements"}
+                downloaded={zipDownloaded}
               />
-              <DocUpload title={"Извещение"} FileIcon={<EmptyUploadFile />} />
               <DocUpload
-                title={"Описание объекта закупки"}
+                title={notification}
                 FileIcon={<EmptyUploadFile />}
+                docType={"Notice"}
+                downloaded={zipDownloaded}
+              />
+              <DocUpload
+                title={purchase}
+                FileIcon={<EmptyUploadFile />}
+                docType={"DescriptionOfProcurementItem"}
+                downloaded={zipDownloaded}
               />
             </SDocsList>
           </SDocsSection>

@@ -4,8 +4,6 @@
 //
 // import API, { DetailsError, IError } from "@/shared/api";
 //
-// import { ICreateCompetitionRequest } from "./createCompetition.types";
-//
 // export const createCompetitionKey = "createCompetition";
 //
 // const createCompetition = async (
@@ -36,5 +34,5 @@
 //     mutationKey: [createCompetitionKey],
 //     mutationFn: createCompetition,
 //   });
-//
+
 export * from "./createCompetition.types";

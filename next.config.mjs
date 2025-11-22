@@ -27,6 +27,9 @@ const nextConfig = {
       "dayjs",
       "lodash.debounce",
     ],
+    serverActions: {
+      bodySizeLimit: "10mb",
+    },
   },
   transpilePackages: [
     "three",

@@ -1,14 +1,19 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import Upload, { RcFile, UploadChangeParam } from "antd/es/upload";
-import { UploadFile } from "antd";
+import { UploadFile, UploadProps } from "antd";
 
 import { DocUpload } from "@/entities/doc";
 import { Folder } from "@/shared/assets";
 import { useNotify } from "@/shared/components";
+import { DocType } from "@/entities/doc/model/docsForm.types";
 
 import { ALLOWED_EXTENSIONS, MAX_SIZE_MB } from "../lib/constants";
 
-export const ZipUpload = () => {
+export interface ZipUploadProps extends UploadProps {
+  setDownloaded: (a: boolean) => void;
+}
+
+export const ZipUpload: FC<ZipUploadProps> = ({ setDownloaded }) => {
   const notify = useNotify();
 
   const beforeUpload = (file: File) => {
@@ -37,32 +42,25 @@ export const ZipUpload = () => {
 
   const handleUpload = async (info: UploadChangeParam<UploadFile>) => {
     const file = info.file.originFileObj as RcFile | undefined;
-
-    if (!file) {
-      notify({
-        type: "error",
-        message: "Ошибка",
-        description: "Файл не найден или повреждён",
-      });
-      return;
-    }
+    console.log("йцукен");
+    setDownloaded(true);
 
     const formData = new FormData();
     formData.append("file", file);
 
     try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) throw new Error();
-
-      notify({
-        type: "success",
-        message: "Успех",
-        description: `Файл ${file.name} успешно отправлен`,
-      });
+      // const response = await fetch("/api/upload", {
+      //   method: "POST",
+      //   body: formData,
+      // });
+      //
+      // if (!response.ok) throw new Error();
+      //
+      // notify({
+      //   type: "success",
+      //   message: "Успех",
+      //   description: `Файл ${file.name} успешно отправлен`,
+      // });
     } catch {
       notify({
         type: "error",

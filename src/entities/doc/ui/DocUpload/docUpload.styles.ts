@@ -45,5 +45,5 @@ export const SLeftIcon = styled.div`
 `;
 
 export const SRightIcon = styled.div`
-  color: ${({ theme }) => theme.colors.gray.g9};
+  color: ${({ theme }) => theme.colors.gray.d2};
 `;

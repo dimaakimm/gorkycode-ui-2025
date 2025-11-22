@@ -10,6 +10,7 @@ import {
 import { LanguageType } from "@/entities/locale";
 import { WithProviders } from "@/app/(providers)";
 import "./(theme)/global.css";
+import { UuidInitializer } from "@/shared/components/UUID";
 
 const sansation = Sansation({
   weight: ["300", "400", "700"],
@@ -53,6 +54,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
             <div style={{ padding: 50, height: "100%", maxHeight: "100%" }}>
               {children}
             </div>
+            <UuidInitializer />
           </WithProviders>
         </NextIntlClientProvider>
       </body>
