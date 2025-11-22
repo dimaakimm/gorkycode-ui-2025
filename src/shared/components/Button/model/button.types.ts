@@ -5,7 +5,8 @@ export type ButtonColorType =
   | "violet"
   | "gray"
   | "white"
-  |'blue'
+  | "blue"
+  | "lightGray"
   | "transparentWhite";
 
 export interface ButtonProps extends Omit<AntdButtonProps, "color"> {

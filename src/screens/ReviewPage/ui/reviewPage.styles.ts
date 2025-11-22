@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Button } from "@/shared/components";
+
 export const SReviewPage = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,6 +57,8 @@ export const SButtonsSection = styled.div`
 
   button {
     width: 100%;
+    height: 100%;
+    border-radius: 10px !important;
   }
 `;
 
@@ -62,4 +66,15 @@ export const SMainContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+`;
+
+export const SHeaderButton = styled(Button)`
+  &.ant-btn-variant-outlined {
+    padding: 10px 30px;
+    height: 40px;
+  }
+
+  &.ant-btn [class^="ant-btn"] {
+    height: 24px;
+  }
 `;

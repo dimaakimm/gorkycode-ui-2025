@@ -26,4 +26,8 @@ export const SButton = styled(Button).attrs<SButtonProps>({})`
     display: flex;
     align-items: center;
   }
+
+  &.ant-btn {
+    gap: 16px;
+  }
 `;
