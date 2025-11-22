@@ -9,23 +9,26 @@ import { SDocReview } from "./docReview.styles";
 export interface DocReviewProps {
   isLoading: boolean;
   title: string;
+  onClick: () => void;
   description?: string;
   format: string;
   infoUrl?: string;
   downloadUrl?: string;
+  isActive?: boolean;
 }
 
 export const DocReview: FC<DocReviewProps> = ({
   isLoading,
+  isActive,
   title,
+  onClick,
   description,
   infoUrl,
   downloadUrl,
 }) => {
   const icon = getDocIconByTitle(title);
-
   return (
-    <SDocReview>
+    <SDocReview onClick={onClick} $isActive={isActive}>
       <div>{icon}</div>
       <div>
         <div>{title}</div>

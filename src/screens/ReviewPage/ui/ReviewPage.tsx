@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { string } from "yup";
 
@@ -15,7 +15,7 @@ import {
   UnaccurateError,
   WrittingError,
 } from "@/shared/assets";
-import { DocReview } from "@/entities/doc";
+import { DocReview, DocType } from "@/entities/doc";
 import { ErrorBlock } from "@/entities/error";
 import { routes } from "@/shared/config";
 
@@ -33,6 +33,7 @@ import {
 } from "./reviewPage.styles";
 
 export const ReviewPage = () => {
+  const [activeDoc, setActiveDoc] = useState<DocType>("IMCP");
   const router = useRouter();
   const handleBackButtonClick = () => {
     router.push(routes.DOCS_PAGE);
@@ -107,29 +108,39 @@ export const ReviewPage = () => {
           </STitleSection>
           <SDocsContainer>
             <DocReview
+              onClick={() => setActiveDoc("IMCP")}
               isLoading={false}
               title={"Обоснование НМЦК.doc"}
               format={".xls"}
+              isActive={activeDoc === "IMCP"}
             />
             <DocReview
+              onClick={() => setActiveDoc("BidContentRequirements")}
               isLoading={false}
-              title={"Обоснование НМЦК.docx"}
+              title={"Требования к содержанию заявки.doc"}
               format={".xls"}
+              isActive={activeDoc === "BidContentRequirements"}
             />
             <DocReview
+              onClick={() => setActiveDoc("DraftGovernmentContract")}
               isLoading={false}
-              title={"Обоснование НМЦК.pdf"}
+              title={"Проект государственного контракта.doc"}
               format={".xls"}
+              isActive={activeDoc === "DraftGovernmentContract"}
             />
             <DocReview
+              onClick={() => setActiveDoc("Notice")}
               isLoading={false}
-              title={"Обоснование НМЦК.pdf"}
+              title={"Извещение.doc"}
               format={".xls"}
+              isActive={activeDoc === "Notice"}
             />
             <DocReview
+              onClick={() => setActiveDoc("DescriptionOfProcurementItem")}
               isLoading={false}
-              title={"Обоснование НМЦК.doc"}
+              title={"Описание объекта закупки.doc"}
               format={".xls"}
+              isActive={activeDoc === "DescriptionOfProcurementItem"}
             />
             <SButtonsSection>
               <Button icon={<DocInfo />} onClick={getItog} color={"gray"}>

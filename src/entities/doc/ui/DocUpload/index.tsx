@@ -1,8 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import type { UploadProps } from "antd";
 
-import { Delete, Upload } from "@/shared/assets";
-import { DOCFile, EmptyUploadFile, Exit, PdfFile } from "@/shared/assets";
+import { Delete, Upload, PdfFile, DOCFile } from "@/shared/assets";
 
 import {
   SDocUpload,

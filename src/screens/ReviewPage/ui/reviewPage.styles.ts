@@ -51,6 +51,7 @@ export const SButtonsSection = styled.div`
   width: 100%;
   display: flex;
   gap: 16px;
+  align-items: center;
 
   button {
     width: 100%;

@@ -38,6 +38,7 @@ export const STitle = styled.div`
 export const SDescription = styled.div`
   ${({ theme }) => theme.font.p3}
   color:${({ theme }) => theme.colors.gray.d9};
+  font-weight: 400;
 `;
 
 export const SLeftIcon = styled.div.attrs<{ $isLoaded: boolean }>({})`
