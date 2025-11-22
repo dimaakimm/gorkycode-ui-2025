@@ -33,8 +33,8 @@ export const DocUpload: FC<DocUploadProps> = ({
 
   const handleChange: UploadProps["onChange"] = async (info) => {
     if (info.file?.name) {
+      setDescriptionState(title);
       setDisplayTitle(info.file.name);
-      setDescriptionState("Загружено");
     }
 
     const lowerName = info.file.name.toLowerCase();
@@ -44,7 +44,7 @@ export const DocUpload: FC<DocUploadProps> = ({
       setFile(DOCFile);
     }
 
-    const sessionId = localStorage.getItem("session_id");
+    const sessionId = localStorage.getItem("user_uuid");
     const rawFile = info.file.originFileObj as File;
 
     const formData = new FormData();
@@ -66,7 +66,7 @@ export const DocUpload: FC<DocUploadProps> = ({
 
   useEffect(() => {
     if (downloaded) {
-      setDescriptionState("Загружено");
+      setDescriptionState(displayTitle + " Загружено");
 
       const titleLower = title.toLowerCase();
       if (titleLower.endsWith(".pdf")) {

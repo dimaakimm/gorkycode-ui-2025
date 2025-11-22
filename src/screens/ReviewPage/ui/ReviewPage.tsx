@@ -36,7 +36,7 @@ export const ReviewPage = () => {
     router.push("/");
   };
   const handleExitButtonClick = () => {
-    router.push("/");
+    router.push("/docs");
   };
 
   return (

@@ -41,6 +41,23 @@ const DocsPage = () => {
   };
   const isSendDisabled = !!errors.length;
 
+  const goToReview = async () => {
+    const id =
+      typeof window !== "undefined" ? localStorage.getItem("user_uuid") : "";
+
+    const formData = new FormData();
+    //@ts-ignore
+    formData.append("session_id", id);
+
+    const response = await fetch("http://localhost:8080/start", {
+      method: "POST",
+      body: formData,
+    });
+
+    // @ts-ignore
+    router.push(`/review/${encodeURIComponent(id)}`);
+  };
+
   return (
     <SDocsPage>
       <div>
@@ -127,7 +144,8 @@ const DocsPage = () => {
                 </ul>
               }
             >
-              <Button color={"blue"} disabled={!isReady}>
+              {/*<Button color={"blue"} disabled={!isReady}>*/}
+              <Button color={"blue"} onClick={goToReview}>
                 Отправить файлы на обработку
               </Button>
             </Tooltip>
