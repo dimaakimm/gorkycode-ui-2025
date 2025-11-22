@@ -64,27 +64,27 @@ export const ReviewPage = () => {
           <SDocsContainer>
             <DocReview
               isLoading={false}
-              title={"Обоснование НМЦК.xlsx"}
+              title={"Обоснование НМЦК.doc"}
               format={".xls"}
             />
             <DocReview
               isLoading={false}
-              title={"Обоснование НМЦК.xlsx"}
+              title={"Обоснование НМЦК.docx"}
               format={".xls"}
             />
             <DocReview
               isLoading={false}
-              title={"Обоснование НМЦК.xlsx"}
+              title={"Обоснование НМЦК.pdf"}
               format={".xls"}
             />
             <DocReview
               isLoading={false}
-              title={"Обоснование НМЦК.xlsx"}
+              title={"Обоснование НМЦК.pdf"}
               format={".xls"}
             />
             <DocReview
               isLoading={false}
-              title={"Обоснование НМЦК.xlsx"}
+              title={"Обоснование НМЦК.doc"}
               format={".xls"}
             />
             <SButtonsSection>

@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { Button } from "@/shared/components";
 import { DocDownload, DocInfo } from "@/shared/assets";
 
+import { getDocIconByTitle } from "../lib/getDocIconByTitle";
 import { SDocReview } from "./docReview.styles";
 
 export interface DocReviewProps {
@@ -18,13 +19,14 @@ export const DocReview: FC<DocReviewProps> = ({
   isLoading,
   title,
   description,
-  format,
   infoUrl,
   downloadUrl,
 }) => {
+  const icon = getDocIconByTitle(title);
+
   return (
     <SDocReview>
-      <div>icon</div>
+      <div>{icon}</div>
       <div>
         <div>{title}</div>
         <div>{description}</div>

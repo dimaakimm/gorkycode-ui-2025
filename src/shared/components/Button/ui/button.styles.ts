@@ -21,4 +21,9 @@ export const SButton = styled(Button).attrs<SButtonProps>({})`
   &.ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
     ${({ $color }) => getButtonHoverColorStyles($color)};
   }
+  &.ant-btn [class^="ant-btn"] {
+    height: 32px;
+    display: flex;
+    align-items: center;
+  }
 `;
