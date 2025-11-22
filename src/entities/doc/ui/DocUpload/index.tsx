@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import type { UploadProps } from "antd";
 
 import { Delete, Upload } from "@/shared/assets";
@@ -21,6 +21,9 @@ export const DocUpload: FC<DocUploadProps> = ({
   title,
   maxCount = 1,
   accept = ".pdf,.docx",
+  docType,
+  downloaded,
+  enableFetch = true,
   ...props
 }) => {
   const [displayTitle, setDisplayTitle] = useState(title);
@@ -28,10 +31,10 @@ export const DocUpload: FC<DocUploadProps> = ({
   const [file, setFile] = useState(FileIcon);
   const [file2, setFile2] = useState(Upload);
 
-  const handleChange: UploadProps["onChange"] = (info) => {
+  const handleChange: UploadProps["onChange"] = async (info) => {
     if (info.file?.name) {
+      setDescriptionState(title);
       setDisplayTitle(info.file.name);
-      setDescriptionState("Загружено");
     }
 
     const lowerName = info.file.name.toLowerCase();
@@ -41,9 +44,39 @@ export const DocUpload: FC<DocUploadProps> = ({
       setFile(DOCFile);
     }
 
+    const sessionId = localStorage.getItem("user_uuid");
+    const rawFile = info.file.originFileObj as File;
+
+    const formData = new FormData();
+    formData.append("file", rawFile);
+    // @ts-ignore
+    formData.append("session_id", sessionId);
+    formData.append("doc_type", docType || "");
+
+    if (enableFetch) {
+      await fetch("http://localhost:8000/upload/", {
+        method: "POST",
+        body: formData,
+      });
+    }
+
     setFile2(Delete);
     props.onChange?.(info);
   };
+
+  useEffect(() => {
+    if (downloaded) {
+      setDescriptionState(displayTitle + " Загружено");
+
+      const titleLower = title.toLowerCase();
+      if (titleLower.endsWith(".pdf")) {
+        setFile(PdfFile);
+      } else if (titleLower.endsWith(".doc") || titleLower.endsWith(".docx")) {
+        setFile(DOCFile);
+      }
+      setFile2(Delete);
+    }
+  }, [downloaded]);
 
   return (
     <SDocUpload
