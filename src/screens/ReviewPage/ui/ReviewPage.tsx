@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import { string } from "yup";
 
 import { Button } from "@/shared/components";
 import {
@@ -38,6 +39,49 @@ export const ReviewPage = () => {
   };
   const handleExitButtonClick = () => {
     router.push("/docs");
+  };
+
+  const getAnalyze = async () => {
+    const fileUrl = "";
+    downloadFile(fileUrl);
+  };
+
+  const getItog = () => {
+    const fileUrl = "";
+    downloadFile(fileUrl);
+  };
+
+  const downloadFile = async (url: string) => {
+    const response = await fetch(url, {
+      method: "GET",
+    });
+    const blob = await response.blob();
+
+    // пытаемся достать имя файла из Content-Disposition
+    const contentDisposition = response.headers.get("Content-Disposition");
+    let filename = "document";
+
+    if (contentDisposition) {
+      // ищем filename*=utf-8''имя_файла
+      const utf8Match = /filename\*=utf-8''([^;]+)/i.exec(contentDisposition);
+      const asciiMatch = /filename="?([^";]+)"?/i.exec(contentDisposition);
+
+      if (utf8Match && utf8Match[1]) {
+        filename = decodeURIComponent(utf8Match[1]);
+      } else if (asciiMatch && asciiMatch[1]) {
+        filename = asciiMatch[1];
+      }
+    }
+
+    // создаём временную ссылку и кликаем по ней
+    const blobUrl = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(blobUrl);
   };
 
   return (
@@ -88,10 +132,14 @@ export const ReviewPage = () => {
               format={".xls"}
             />
             <SButtonsSection>
-              <Button icon={<DocInfo />} color={"gray"}>
+              <Button icon={<DocInfo />} onClick={getItog} color={"gray"}>
                 Скачать справку
               </Button>
-              <Button icon={<DocDownload />} color={"gray"}>
+              <Button
+                icon={<DocDownload />}
+                onClick={getAnalyze}
+                color={"gray"}
+              >
                 Скачать анализ
               </Button>
             </SButtonsSection>

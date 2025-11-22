@@ -45,14 +45,14 @@ const DocsPage = () => {
     const id =
       typeof window !== "undefined" ? localStorage.getItem("user_uuid") : "";
 
-    const formData = new FormData();
-    //@ts-ignore
-    formData.append("session_id", id);
-
-    const response = await fetch("http://localhost:8080/start", {
-      method: "POST",
-      body: formData,
-    });
+    // const formData = new FormData();
+    // //@ts-ignore
+    // formData.append("session_id", id);
+    //
+    // const response = await fetch("http://localhost:8080/start", {
+    //   method: "POST",
+    //   body: formData,
+    // });
 
     // @ts-ignore
     router.push(`/review/${encodeURIComponent(id)}`);
