@@ -23,6 +23,7 @@ import {
   SButtonsSection,
   SDocsContainer,
   SErrorBlocksContainer,
+  SHeaderButton,
   SMainBlockSection,
   SMainContent,
   SPageHeader,
@@ -88,16 +89,20 @@ export const ReviewPage = () => {
   return (
     <SReviewPage>
       <SPageHeader>
-        <Button
+        <SHeaderButton
           onClick={handleBackButtonClick}
           color="white"
           icon={<ArrowLeft />}
         >
           Вернуться
-        </Button>
-        <Button onClick={handleExitButtonClick} color="blue" icon={<Exit />}>
+        </SHeaderButton>
+        <SHeaderButton
+          onClick={handleExitButtonClick}
+          color="blue"
+          icon={<Exit />}
+        >
           Завершить проверку
-        </Button>
+        </SHeaderButton>
       </SPageHeader>
 
       <SMainContent>

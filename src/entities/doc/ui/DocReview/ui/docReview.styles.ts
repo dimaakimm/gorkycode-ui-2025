@@ -17,6 +17,7 @@ export const SDocReview = styled.div.attrs<{ $isActive?: boolean }>({})`
     $isActive
       ? css`
           border: 2px solid ${theme.colors.blue};
+          border-right: 6px solid ${({ theme }) => theme.colors.blue};
         `
       : css`
           margin: 1px;

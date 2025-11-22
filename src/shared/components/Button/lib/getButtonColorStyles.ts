@@ -21,13 +21,18 @@ export const getButtonColorStyles = ($color: ButtonColorType) => {
       `;
     case "white":
       return css`
-        background-color: ${({ theme }) => theme.colors.gray.f4};
+        background-color: ${({ theme }) => theme.colors.white};
         color: ${({ theme }) => theme.colors.black};
       `;
     case "transparentWhite":
       return css`
         background-color: transparent;
         color: ${({ theme }) => theme.colors.white};
+      `;
+    case "lightGray":
+      return css`
+        background-color: ${({ theme }) => theme.colors.gray.f4};
+        color: ${({ theme }) => theme.colors.black};
       `;
   }
 };
@@ -41,6 +46,14 @@ export const getButtonHoverColorStyles = ($color: ButtonColorType) => {
     case "blue":
       return css`
         background-color: #042334;
+      `;
+    case "lightGray":
+      return css`
+        background-color: ${({ theme }) => theme.colors.gray.d9};
+      `;
+    case "white":
+      return css`
+        background-color: ${({ theme }) => theme.colors.gray.f4};
       `;
   }
 };
