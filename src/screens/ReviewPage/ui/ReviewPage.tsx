@@ -16,6 +16,7 @@ import {
 } from "@/shared/assets";
 import { DocReview } from "@/entities/doc";
 import { ErrorBlock } from "@/entities/error";
+import { routes } from "@/shared/config";
 
 import {
   SButtonsSection,
@@ -33,7 +34,7 @@ import {
 export const ReviewPage = () => {
   const router = useRouter();
   const handleBackButtonClick = () => {
-    router.push("/");
+    router.push(routes.DOCS_PAGE);
   };
   const handleExitButtonClick = () => {
     router.push("/");

@@ -40,8 +40,9 @@ export const SDescription = styled.div`
   color:${({ theme }) => theme.colors.gray.d9};
 `;
 
-export const SLeftIcon = styled.div`
-  color: ${({ theme }) => theme.colors.gray.d2};
+export const SLeftIcon = styled.div.attrs<{ $isLoaded: boolean }>({})`
+  color: ${({ theme, $isLoaded }) =>
+    $isLoaded ? theme.colors.black : theme.colors.gray.d2};
 `;
 
 export const SRightIcon = styled.div`

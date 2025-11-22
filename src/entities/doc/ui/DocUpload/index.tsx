@@ -54,7 +54,9 @@ export const DocUpload: FC<DocUploadProps> = ({
       {...props}
     >
       <SContent>
-        <SLeftIcon>{file}</SLeftIcon>
+        <SLeftIcon $isLoaded={descriptionState === "Загружено"}>
+          {file}
+        </SLeftIcon>
         <STextSection>
           <STitle>{displayTitle}</STitle>
           <SDescription>{descriptionState}</SDescription>
