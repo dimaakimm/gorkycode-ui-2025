@@ -148,15 +148,15 @@ export const ReviewPage = () => {
               isActive={activeDoc === "DescriptionOfProcurementItem"}
             />
             <SButtonsSection>
-              <Button icon={<DocInfo />} onClick={getItog} color={"lightGray"}>
-                Скачать справку
+              <Button icon={<DocInfo />} onClick={getItog} color={"gray"}>
+                Отчет об ошибках
               </Button>
               <Button
                 icon={<DocDownload />}
                 onClick={getAnalyze}
-                color={"lightGray"}
+                color={"gray"}
               >
-                Скачать анализ
+                Просмотр ошибок
               </Button>
             </SButtonsSection>
           </SDocsContainer>
@@ -168,7 +168,7 @@ export const ReviewPage = () => {
             <ErrorBlock
               color={"#EC5653"}
               icon={<RequiermentsError />}
-              title={"Несоответствие требованиям"}
+              title={"Несоответствие законодательным актам"}
               errors={[
                 {
                   title: "ФЗ 44 ч.3",
@@ -194,7 +194,7 @@ export const ReviewPage = () => {
             <ErrorBlock
               color={"#A753EC"}
               icon={<UnaccurateError />}
-              title={"Неточные формулировки"}
+              title={"Ошибки на основе решений регуляторов"}
               errors={[
                 {
                   title: "ФЗ 44 ч.3",
@@ -241,7 +241,7 @@ export const ReviewPage = () => {
             <ErrorBlock
               color={"#F4A076"}
               icon={<GeneralError />}
-              title={"Общие ошибки"}
+              title={"Согласованность комплекта документов"}
               errors={[
                 {
                   title: "ФЗ 44 ч.3",
