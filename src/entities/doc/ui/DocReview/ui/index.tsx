@@ -3,34 +3,43 @@ import React, { FC } from "react";
 import { Button } from "@/shared/components";
 import { DocDownload, DocInfo } from "@/shared/assets";
 
-import { SDocReview } from "./docReview.styles";
+import { SDocReview } from "../../../model/docReview.styles";
 
-export const DocReview: FC<{
+export interface DocReviewProps {
   isLoading: boolean;
   title: string;
   description?: string;
   format: string;
   infoUrl?: string;
-  dowloadUrl?: string;
-}> = () => {
+  downloadUrl?: string;
+}
+
+export const DocReview: FC<DocReviewProps> = ({
+  isLoading,
+  title,
+  description,
+  format,
+  infoUrl,
+  downloadUrl,
+}) => {
   return (
     <SDocReview>
       <div>icon</div>
       <div>
-        <div>title</div>
-        <div>sub</div>
+        <div>{title}</div>
+        <div>{description}</div>
       </div>
       <div>
-        <div>
+        {infoUrl && (
           <Button>
             <DocInfo />
           </Button>
-        </div>
-        <div>
+        )}
+        {downloadUrl && (
           <Button>
             <DocDownload />
           </Button>
-        </div>
+        )}
       </div>
     </SDocReview>
   );
