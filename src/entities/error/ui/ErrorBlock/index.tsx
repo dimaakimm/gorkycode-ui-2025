@@ -7,6 +7,7 @@ import {
   SError,
   SErrorBlock,
   SErrorsSection,
+  SErrorTitle,
   SErrorTitleSection,
   STitle,
 } from "./errorBlock.styles";
@@ -33,14 +34,14 @@ export const ErrorBlock: FC<ErrorBlockProps> = ({
             <div style={{ color: color }}>{icon}</div>
             <div>
               <SErrorTitleSection>
-                <div style={{ color: color }}>{err.title}</div>
+                <SErrorTitle style={{ color: color }}>{err.title}</SErrorTitle>
                 {err.link && (
                   <Link href={err.link}>
                     <LinkSvg />
                   </Link>
                 )}
               </SErrorTitleSection>
-              <div>{err.description}</div>
+              <SErrorTitle>{err.description}</SErrorTitle>
             </div>
           </SError>
         ))}

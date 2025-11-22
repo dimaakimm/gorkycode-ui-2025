@@ -31,3 +31,11 @@ export const SErrorTitleSection = styled.div`
   gap: 2px;
   display: flex;
 `;
+
+export const SErrorTitle = styled.div`
+  ${({ theme }) => theme.font.p2}
+`;
+
+export const SErrorDescription = styled.div`
+  ${({ theme }) => theme.font.p1}
+`;

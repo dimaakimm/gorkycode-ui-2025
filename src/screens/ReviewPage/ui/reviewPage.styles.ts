@@ -66,6 +66,7 @@ export const SMainContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-bottom: 40px;
 `;
 
 export const SHeaderButton = styled(Button)`
