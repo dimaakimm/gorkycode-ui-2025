@@ -148,13 +148,13 @@ export const ReviewPage = () => {
               isActive={activeDoc === "DescriptionOfProcurementItem"}
             />
             <SButtonsSection>
-              <Button icon={<DocInfo />} onClick={getItog} color={"gray"}>
+              <Button icon={<DocInfo />} onClick={getItog} color={"lightGray"}>
                 Отчет об ошибках
               </Button>
               <Button
                 icon={<DocDownload />}
                 onClick={getAnalyze}
-                color={"gray"}
+                color={"lightGray"}
               >
                 Просмотр ошибок
               </Button>
