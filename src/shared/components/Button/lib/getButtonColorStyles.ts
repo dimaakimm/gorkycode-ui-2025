@@ -38,5 +38,9 @@ export const getButtonHoverColorStyles = ($color: ButtonColorType) => {
       return css`
         background-color: ${({ theme }) => theme.colors.gray.g9};
       `;
+    case "blue":
+      return css`
+        background-color: #042334;
+      `;
   }
 };
