@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { Button } from "@/shared/components";
 import { DocDownload, DocInfo } from "@/shared/assets";
 
-import { SDocReview } from "../../../model/docReview.styles";
+import { SDocReview } from "./docReview.styles";
 
 export interface DocReviewProps {
   isLoading: boolean;

@@ -19,3 +19,5 @@ export * from "./DocInfo";
 export * from "./DocDownload";
 export * from "./DOCFile";
 export * from "./Delete";
+export * from "./LinkSvg";
+export * from "./RequiermentsError";

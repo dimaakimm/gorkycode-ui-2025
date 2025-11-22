@@ -10,6 +10,7 @@ export const SDocReview = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.gray.d2};
   cursor: pointer;
   transition: background-color 0.2s ease;
+  overflow: hidden;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.gray.f4};
