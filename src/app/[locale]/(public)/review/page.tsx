@@ -2,7 +2,7 @@
 
 import { getTranslations } from "next-intl/server";
 
-import DocsPage from "@/screens/DocsPage/ui/DocsPage";
+import { ReviewPage } from "@/screens/ReviewPage";
 
 export async function generateMetadata() {
   const t = await getTranslations();
@@ -14,5 +14,5 @@ export async function generateMetadata() {
 }
 
 export default async function Review() {
-  return <DocsPage />;
+  return <ReviewPage />;
 }

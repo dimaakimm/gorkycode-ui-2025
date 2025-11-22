@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+    ports:
+      - "15432:5432"  # Пробрасываем порт для доступа с хоста (не обязателен для контейнеров)
+    restart: always
+
+  fastapi:
+    build: .
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://myuser:mypassword@postgres:5432/mydatabase  # Подключение к базе через имя сервиса 'postgres'
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"  # Пробрасываем порт FastAPI
+    networks:
+      - mynetwork
+    restart: always
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  postgres_data:
