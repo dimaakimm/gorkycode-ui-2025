@@ -9,7 +9,10 @@ import {
   DocDownload,
   DocInfo,
   Exit,
+  GeneralError,
   RequiermentsError,
+  UnaccurateError,
+  WrittingError,
 } from "@/shared/assets";
 import { DocReview } from "@/entities/doc";
 import { ErrorBlock } from "@/entities/error";
@@ -18,9 +21,13 @@ import {
   SButtonsSection,
   SDocsContainer,
   SErrorBlocksContainer,
+  SMainBlockSection,
+  SMainContent,
+  SPageHeader,
   SReviewPage,
   SSubtitle,
   STitle,
+  STitleSection,
 } from "./reviewPage.styles";
 
 export const ReviewPage = () => {
@@ -34,7 +41,7 @@ export const ReviewPage = () => {
 
   return (
     <SReviewPage>
-      <div>
+      <SPageHeader>
         <Button
           onClick={handleBackButtonClick}
           color="white"
@@ -42,17 +49,17 @@ export const ReviewPage = () => {
         >
           Вернуться
         </Button>
-
         <Button onClick={handleExitButtonClick} color="blue" icon={<Exit />}>
           Завершить проверку
         </Button>
-      </div>
-      <div>
-        <div>
-          <div>
+      </SPageHeader>
+
+      <SMainContent>
+        <SMainBlockSection>
+          <STitleSection>
             <STitle>Обработка файлов</STitle>
             <SSubtitle>Подождите, пока ваши файлы в обработке</SSubtitle>
-          </div>
+          </STitleSection>
           <SDocsContainer>
             <DocReview
               isLoading={false}
@@ -88,9 +95,9 @@ export const ReviewPage = () => {
               </Button>
             </SButtonsSection>
           </SDocsContainer>
-        </div>
+        </SMainBlockSection>
 
-        <div>
+        <SMainBlockSection>
           <STitle>Ошибки</STitle>
           <SErrorBlocksContainer>
             <ErrorBlock
@@ -115,7 +122,7 @@ export const ReviewPage = () => {
             />
             <ErrorBlock
               color={"#A753EC"}
-              icon={<RequiermentsError />}
+              icon={<UnaccurateError />}
               title={"Неточные формулировки"}
               errors={[
                 {
@@ -135,7 +142,7 @@ export const ReviewPage = () => {
             />
             <ErrorBlock
               color={"#76A0F4"}
-              icon={<RequiermentsError />}
+              icon={<WrittingError />}
               title={"Орфографические ошибки"}
               errors={[
                 {
@@ -154,8 +161,8 @@ export const ReviewPage = () => {
               ]}
             />
             <ErrorBlock
-              color={"#F4A076 "}
-              icon={<RequiermentsError />}
+              color={"#F4A076"}
+              icon={<GeneralError />}
               title={"Общие ошибки"}
               errors={[
                 {
@@ -174,8 +181,8 @@ export const ReviewPage = () => {
               ]}
             />
           </SErrorBlocksContainer>
-        </div>
-      </div>
+        </SMainBlockSection>
+      </SMainContent>
     </SReviewPage>
   );
 };

@@ -7,6 +7,18 @@ export const SReviewPage = styled.div`
   height: 100%;
 `;
 
+export const SPageHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+`;
+
+export const STitleSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+
 export const STitle = styled.div`
   ${({ theme }) => theme.font.title}
 `;
@@ -23,6 +35,12 @@ export const SDocsContainer = styled.div`
   row-gap: 10px;
 `;
 
+export const SMainBlockSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
 export const SErrorBlocksContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -37,4 +55,10 @@ export const SButtonsSection = styled.div`
   button {
     width: 100%;
   }
+`;
+
+export const SMainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;

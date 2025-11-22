@@ -21,3 +21,6 @@ export * from "./DOCFile";
 export * from "./Delete";
 export * from "./LinkSvg";
 export * from "./RequiermentsError";
+export * from "./GeneralError";
+export * from "./WrittingError";
+export * from "./UnaccurateError";

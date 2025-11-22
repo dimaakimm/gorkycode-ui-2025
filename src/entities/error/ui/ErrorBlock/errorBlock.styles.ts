@@ -9,6 +9,7 @@ export const STitle = styled.div`
   padding: 20px;
   ${({ theme }) => theme.font.h2}
   color: ${({ theme }) => theme.colors.black};
+  font-weight: 590;
 `;
 
 export const SErrorsSection = styled.div`

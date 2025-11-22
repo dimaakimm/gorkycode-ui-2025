@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import Link from "next/link";
 
 import { LinkSvg } from "@/shared/assets";
 
@@ -33,9 +34,11 @@ export const ErrorBlock: FC<ErrorBlockProps> = ({
             <div>
               <SErrorTitleSection>
                 <div style={{ color: color }}>{err.title}</div>
-                <div>
-                  <LinkSvg />
-                </div>
+                {err.link && (
+                  <Link href={err.link}>
+                    <LinkSvg />
+                  </Link>
+                )}
               </SErrorTitleSection>
               <div>{err.description}</div>
             </div>
